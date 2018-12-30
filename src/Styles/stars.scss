@@ -1,0 +1,84 @@
+$sky-width: 2000;
+$sky-height: 2000;
+
+/* star functions */
+
+@function create-one-star () {
+  @return "#{random($sky-width)}px #{random($sky-height)}px #FFF"
+}
+
+@function create-stars ($n) {
+  $stars: create-one-star();
+  @for $i from 2 through $n {
+    $stars: "#{$stars} , #{create-one-star()}";
+  }
+  @return unquote($stars);
+}
+
+@mixin star-appearance($star-size, $twinkle) {
+  width: $star-size;
+  height: $star-size;
+  border-radius: 50%;
+  background: transparent;
+  animation: $twinkle 3s infinite;
+}
+
+@mixin stars($num-stars, $star-size, $twinkle) {
+  @include star-appearance($star-size, $twinkle);
+  box-shadow: create-stars($num-stars);
+  z-index: 1;
+}
+
+/* star animations */
+
+@keyframes twinkle_layer1 {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes twinkle_layer2 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes twinkle_layer3 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
