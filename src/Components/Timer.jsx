@@ -52,6 +52,7 @@ class Timer extends Component {
           <span className="show">
             {getLastDigit(this.state[u])}
           </span>
+          <span className="indicate">{u[0].toUpperCase()}</span>
         </>
       );
       if (index < units.length - 1) {
@@ -62,6 +63,7 @@ class Timer extends Component {
       return accu === null ? [elem] : [...accu, elem]
     }, null)
   }
+
 
   render() {
     return (

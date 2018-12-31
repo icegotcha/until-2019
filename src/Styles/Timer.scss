@@ -26,9 +26,6 @@ $until2019-color: #47525E;
 }
 
 .time {
-  p {
-    display: inline;
-  }
   .show {
     margin: 5px;
     padding: 10px;
@@ -40,6 +37,11 @@ $until2019-color: #47525E;
     font-size: $time-font-size;
     color: $time-number-bg;
   }
-}
 
+  .indicate {
+    position: absolute;
+    font-size: 2.5vw;
+    bottom: 0;
+  }
+}
 
