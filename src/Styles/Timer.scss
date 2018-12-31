@@ -2,6 +2,8 @@ $time-number-bg: #976DD0;
 $time-font-size: 6vw;
 $time-indicate-font-size: $time-font-size / 2;
 
+$until2019-color: #47525E;
+
 #Timer {
   width: 100%;
   // center itself
@@ -10,11 +12,23 @@ $time-indicate-font-size: $time-font-size / 2;
   transform: translateY(-50%);
 }
 
+#Until2019 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 10vw;
+  color: $until2019-color;
+}
+
+#Timer.hide, #Until2019.hide {
+  transition: opacity 500ms;
+  opacity: 0;
+}
+
 .time {
   p {
     display: inline;
   }
-
   .show {
     margin: 5px;
     padding: 10px;
@@ -22,7 +36,6 @@ $time-indicate-font-size: $time-font-size / 2;
     font-size: $time-font-size;
     background: $time-number-bg;
   }
-
   .separate {
     font-size: $time-font-size;
     color: $time-number-bg;

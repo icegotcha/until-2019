@@ -7,7 +7,7 @@ class Timer extends Component {
 
   constructor(props) {
     super(props);
-    // find difference at start
+
     const now = (new Date()).getTime();
     const {days, hours, min, sec} = timeLeft(now);
     this.state = {days, hours, min, sec};
@@ -29,7 +29,16 @@ class Timer extends Component {
     const now = (new Date()).getTime();
     const {days, hours, min, sec} = timeLeft(now);
     this.setState({days, hours, min, sec});
+    if (this.isTimeOut()) {
+      // from parent
+      this.props.setTimeout(true);
+    }
   }
+
+  isTimeOut() {
+    return this.state.days === 0 && this.state.hours === 0 && this.state.min === 0 && this.state.sec === 0;
+  }
+
 
   renderTimer() {
     const units = Object.keys(this.state);
@@ -56,9 +65,12 @@ class Timer extends Component {
 
   render() {
     return (
-      <div id="Timer">
+      <>
+        <div id="Timer" className={(this.isTimeOut()) ? 'hide' : ''}>
         <p className="time">{this.renderTimer()}</p>
       </div>
+        <div id="Until2019" className={(this.isTimeOut()) ? 'hide' : ''}>Until 2019</div>
+      </>
     );
   }
 }

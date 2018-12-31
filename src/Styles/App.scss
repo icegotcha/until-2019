@@ -1,7 +1,5 @@
 @import "stars";
 
-$until2019-color: #47525E;
-
 @mixin sky-bg {
   background: linear-gradient(to bottom, #090A0F 0%, #1B2735 100%);
 }
@@ -29,12 +27,4 @@ $until2019-color: #47525E;
 
 .stars-layer3 {
   @include stars(600, 3px, twinkle_layer3);
-}
-
-.until2019 {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  font-size: 10vw;
-  color: $until2019-color;
 }

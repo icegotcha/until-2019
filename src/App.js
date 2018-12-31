@@ -4,6 +4,20 @@ import Fireworks from './Components/Fireworks.jsx';
 import './Styles/App.scss';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      timeout: false,
+    };
+
+    this.setTimeout = this.setTimeout.bind(this);
+  }
+
+  setTimeout(timeout) {
+    this.setState({timeout})
+  }
+
   render() {
     return (
       <div className="App">
@@ -11,9 +25,10 @@ class App extends Component {
           <div className="stars-layer1"/>
           <div className="stars-layer2"/>
           <div className="stars-layer3"/>
-          <Fireworks/>
-          <Timer/>
-          <div className="until2019">Until 2019</div>
+          {/* Hide when timeout */}
+          <Timer setTimeout={this.setTimeout}/>
+          {/* Show when timeout */}
+          <Fireworks timeout={this.state.timeout}/>
         </header>
       </div>
     );

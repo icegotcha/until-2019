@@ -1,4 +1,4 @@
-const DATE_WILL_DIFF = (new Date('01/01/2019 00:00:00')).getTime();
+const DATE_WILL_DIFF = (new Date('12/31/2018 17:21:00'));
 
 const timeLeft = (now) => {
   if (now > DATE_WILL_DIFF) {

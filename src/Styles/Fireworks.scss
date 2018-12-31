@@ -113,9 +113,17 @@ $box-shadow2: ();
             5s position linear infinite backwards
     ));
   }
-
   > .after {
     @include animation-delay((1.25s, 1.25s, 1.25s));
     @include animation-duration((1.25s, 1.25s, 6.25s));
   }
+}
+
+.start.hide {
+  opacity: 0;
+}
+
+.start.show {
+  transition: opacity 1000ms;
+  opacity: 1;
 }
