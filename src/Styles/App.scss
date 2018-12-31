@@ -1,5 +1,7 @@
 @import "stars";
 
+$gold: #FFD700;
+
 @mixin sky-bg {
   background: linear-gradient(to bottom, #090A0F 0%, #1B2735 100%);
 }
@@ -27,4 +29,28 @@
 
 .stars-layer3 {
   @include stars(600, 3px, twinkle_layer3);
+}
+
+.text-after-timeout {
+  width: 100%;
+  font-size: 0;
+  color: #FFF;
+  text-shadow: 3px 3px 0 $gold,
+  -1px -1px 0 $gold,
+  1px -1px 0 $gold,
+  -1px 1px 0 $gold,
+  1px 1px 0 $gold;
+  border-radius: 10%;
+
+  // center itself
+  position: absolute;
+  top: 30%;
+  transform: translateY(-30%);
+  // hide
+  transition: font-size 500ms ease-out;
+}
+
+.text-after-timeout.show {
+  font-size: 12vh;
+  transition: font-size 500ms ease-in;
 }
