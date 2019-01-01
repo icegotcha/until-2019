@@ -28,7 +28,8 @@ class App extends Component {
           {/* Hide when timeout */}
           <Timer setTimeout={this.setTimeout}/>
           {/* Show when timeout */}
-          <p className={`text-after-timeout ${(this.state.timeout) ? 'show' : ''}`}>Happy New Year !!!</p>
+          <p className={`text-after-timeout ${(this.state.timeout) ? 'show' : ''}`}>Happy New Year !!!<br/> I wish you
+            the best forever :)</p>
           <Fireworks timeout={this.state.timeout}/>
         </header>
       </div>

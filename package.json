@@ -8,6 +8,7 @@
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.2"
   },
+  "homepage": "https://until-2019.000webhostapp.com/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
