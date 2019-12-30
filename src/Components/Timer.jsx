@@ -59,9 +59,7 @@ class Timer extends Component {
         elements.push(<span className="separate"> : </span>);
       }
     });
-    return elements.reduce((accu, elem) => {
-      return accu === null ? [elem] : [...accu, elem]
-    }, null)
+    return elements;
   }
 
 
